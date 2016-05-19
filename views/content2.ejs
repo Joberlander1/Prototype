@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
+  <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>   
+            <div ng-controller="ClientCtrl">
+    <form ng-submit="addClient()">
+        <div class="col-lg-6">
+        <div class="input-group input-group-lg">
+
+<small> Insurance </small>
+						<table style="width:100%">
+<tr>
+    <td><input class="form-control" type="number" ng-model="clientCai"
+	size="20" placeholder="Client Auto Insurance Company"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientPolicy"
+	size="15" placeholder="Policy #"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientAdjstrnme"size="15" placeholder="Adjuster Name"> <span</td>
+	<td><input class="form-control" type="number" ng-model="clientAdjstrphne"size="15" placeholder="Adjuster Phone #"> <span</td>
+	<td><input class="form-control" type="number" ng-model="clientAdjstrfx"size="15" placeholder="Adjuster Fax #"> <span</td>
+</tr>
+<tr>
+    <td><input class="form-control" type="number" ng-model="clientInsclaimnum"size="15" placeholder="Insurance Claim #"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientClaim"size="15" placeholder="Claim #"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientAdvpol"size="15" placeholder="Adverse Policy #"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientAdvins"size="15" placeholder="Adverse Insurance Co."> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientAdvinsp"size="15" placeholder="Adverse Insurance Policy"> <span</td>
+</tr>
+<tr>
+    <td><input class="form-control" type="text" ng-model="clientTrnsprtbprmd"size="15" placeholder="Transported by Medic?"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientWhtcmpny"size="15" placeholder="Which Company?"> <span</td>
+    <td><input class="form-control" type="text" ng-model="clientMedtrtmnt"size="15" placeholder="Received Medical Treatment?"> <span</td>
+    <td><input class="form-control" type="string" ng-model="clientPrvdrs"size="15" placeholder="Medical Providers"> <span</td>
+    <td><input class="form-control" type="date" ng-model="clientDoi"size="15" placeholder="Date of Insurance"> <span</td>
+</tr>
+<tr>
+    <td><input class="form-control" type="string" ng-model="clientRltdclaims"size="15" placeholder="Related Claims"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientWglss"size="15" placeholder="Wage Loss Amount"> <span</td>
+</table> 
+<class="input-group-btn">
+<button class="btn btn-primary btn-lg" type="submit">Add</button>
+</span>
+</div>
+    </div>
+    </form>
+    </div>
+    </div>
+    </div>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<html ng-app="app">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
+
+<div class="container">
+  <div class="row">
+  <%include header%>
+  <%include navbar%>
+    <section>
+        <div class="wizard">
+            <div class="wizard-inner">
+                <div class="connecting-line"></div>
+                <ul class="nav nav-tabs" role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Personal">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Case">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Insurance">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-info-sign"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" role="tabpanel" id="step1">
+                       <br>
+                       <div ng-controller="ClientCtrl">
+  <form ng-submit="addClient()">
+    <div class="col-lg-6">
+    <div class="input-group input-group-lg">
+    <div class="datagrid"><table>
+
+<tbody>
+<tr>
+<td><input class="form-control" type="text" ng-model="clientName"
+                size="15" placeholder=" full name"></td>
+                <td><input class="form-control" type="number" ng-model="clientAge"
+                size="15" placeholder="age"></td>
+                <td><input class="form-control" type="date" ng-model="clientBirthday"
+                size="15" placeholder="Date of Birth"></td>
+                </tr>
+<tr class="alt"><td><input class="form-control" type="text" ng-model="clientGender"
+                size="25" placeholder="Gender"></td>
+                <td><input class="form-control" type="text" ng-model="clientAddress"
+                size="15" placeholder="full address"></td>
+                <td><input class="form-control" type="number" ng-model="clientPhone"
+                size="10" placeholder="phone # client"></td>
+<tr>
+<td><input class="form-control" type="number" ng-model="clientSsn"
+                size="15" placeholder="add SSN client"></td>
+                <td><input class="form-control" type="number" ng-model="clientDln"
+                size="15" placeholder="add DLN client"></td>
+                <td><input class="form-control" type="string" ng-model="clientDls"
+                size="15" placeholder="add DLS client"></td>
+                </tr>
+<tr class="alt"><td><input class="form-control" type="string" ng-model="clientEmail"
+                size="15" placeholder="add Email client"></td>
+                <td><input class="form-control" type="string" ng-model="clientScndcntctprsn" size="15" placeholder="Second Contact Person"> </td>
+                <td><input class="form-control" type="number" ng-model="clientZip"
+                size="15" placeholder="add Zip client"></td></tr>
+</tbody>
+</table>
+</div>
+           <class="input-group-btn">
+                           <span style="padding-left:980px"><a href="/about" type="submit" class="btn btn-primary btn-lg">Save and continue</a></span>
+                        </ul>
+                    </div>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    </form>
+    </section>
+   </div>
+</div>
+<div class="container">
+    <hr>
+
+    <% include footer %>
+  </div>
+  <!-- /container -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#home').addClass("active");
+    });
+  </script>
+</body>
+</html>

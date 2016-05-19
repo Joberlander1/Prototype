@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<html ng-app>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
+<% include header1 %>
+<body>
+	<% include navbar %> 
+
+	<div class="container">
+	<div ng-controller="TodoCtrl">
+	<span style="padding-left: 1400px"><h2> {{todos.length}} Consultants </h2></span>
+	<h4><form class="form-inline">
+      <input ng-model="query" type="text"
+        placeholder="Search" autofocus>
+    </form> <span style="padding-left: 650px"><a href="/client/1/ci" class="btn btn-primary">Add New</a></span></h4>
+ <div class="datagrid"><table> 
+ <thead> 
+ <tr> 
+     <th> ID </th>
+     <th> Name </th>
+     <th> Owner </th>
+     <th> Address </th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr ng-repeat="todo in todos | filter:query | orderBy: 'name' ">
+     <td>
+     {{todo.id}}
+	 </td>
+	 <td> <a href = "/todo/{{todo.id}}">{{todo.name}}</a> </td>
+	 <td>{{todo.owner}}</td>
+	 <td>{{todo.address}}</td>
+	 </tr>
+	 </tbody>
+	 </table>
+
+       
+ 
+          
+		<% include footer %>
+	</div>
+	<!-- /container -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('/consultants').addClass("active");
+		});
+	</script>
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script
+		src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+</body>
+</html>

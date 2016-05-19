@@ -1,0 +1,14 @@
+{
+  "name": "nodeEclipseTutorial",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "*",
+    "express": "3.3.5",
+    "angular-route" : "1.5.5",
+    "jfs": "^0.2.6"
+  }
+}

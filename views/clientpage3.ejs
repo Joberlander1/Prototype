@@ -1,0 +1,67 @@
+<!DOCTYPE html > 
+<html ng-app="app">
+<%include header3%>
+<%include navbar%>
+<div class="container">
+<div ng-controller="ClientCtrl">
+<div ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+	<header><a href="/about" class="btn btn-primary">Back to clients</a>  <h2>{{client.name}}</h2> <small> <span style="padding-left:463px">Staff: Victoria Flores </small> </header>
+	<h1><span style="padding-left:300px"><a href="/client/{{client.id}}" class="btn btn-primary">Personal</a>
+	<a href="/client/{{client.id}}/ci" class="btn btn-primary">Case Info</a>
+	<a href="/client/{{client.id}}/i" class="btn btn-primary">Insurance</a>
+	<a href="/client/{{client.id}}/m" class="btn btn-primary">Medical</a>
+	<a href="/client/{{client.id}}/f" class="btn btn-primary">Financial</a></h1>
+	<body>
+<div class="container">
+	<div ng-controller="ClientCtrl">
+ <div class="datagrid"><table> 
+ <thead> 
+ <tr> 
+     <th> Doctor </th>
+     <th> Company </th>
+     <th> Address</th>
+     <th> Type of Treatment </th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <td><input type="text"  value="
+     {{client.doc}}"/>
+	 </td>
+	 <td><input type="text"  value=" {{client.doccmpny}}"/> </td>
+	 <td><input type="text"  value="{{client.docaddress}}"/></td>
+	 <td><input type="text"  value="{{client.tot}}"/></td>
+	 </tr>
+      <thead>
+	 <tr> 
+     <th> Phone </th>
+     <th>  Fax</th>
+     <th> Billing Dept Phone</th>
+     <th> Billing Dept Fax </th>
+     </tr>
+     </thead>
+     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <td><input type="text"  value="{{client.docphne}}"/> </td>
+	 <td><input type="text"  value="{{client.docfx}}"/></td>
+	 <td><input type="text"  value="{{client.bdp}}"/></td>
+	 <td><input type="text"  value="{{client.bdf}}"/></td>
+	 </tr>
+      <thead>
+	 <tr> 
+     <th> Record Dept Phone </th>
+     <th> Record Dept Fax  </th>
+     <th> Att Billing </th>
+     <th> Att Medical Record</th>
+     </tr>
+     </thead>
+     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <td><input type="text"  value=" {{client.recp}} "/></td>
+     <td><input type="text"  value="{{client.recf}}"/> </td>
+     <td><input type="text"  value=" {{client.atb}}"/> </td>
+     <td><input type="text"  value=" {{client.atmr}}"/> </td>
+	 </tbody>
+	 </table>
+</body>
+	
+	
+     

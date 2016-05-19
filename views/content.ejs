@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
+  <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>   
+			<div ng-controller="ClientCtrl">
+	<form ng-submit="addClient()">
+		<div class="col-lg-6">
+		<div class="input-group input-group-lg">
+<table style="width:100%">
+    <tr>
+    <td><input class="form-control" type="text" ng-model="clientName"
+								size="15" placeholder="add client full name"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientAge"
+								size="15" placeholder="add age client"> <span</td>
+	<td><input class="form-control" type="date" ng-model="clientBirthday"
+								size="15" placeholder="add DOB client"> <span</td>
+	<td><input class="form-control" type="number" ng-model="clientPhone"
+								size="15" placeholder="add phone # client"> <span</td>
+    <td><input class="form-control" type="text" ng-model="clientCanreceivetxt"
+								size="25" placeholder="can client receive texts?"> <span</td>
+  </tr>
+  <tr>
+    <td><input class="form-control" type="number" ng-model="clientSsn"
+								size="15" placeholder="add SSN client"> <span</td>
+    <td><input class="form-control" type="number" ng-model="clientDln"
+								size="15" placeholder="add DLN client"> <span</td>
+    <td><input class="form-control" type="string" ng-model="clientDls"
+								size="15" placeholder="add DLS client"> <span</td>
+	<td><input class="form-control" type="number" ng-model="clientZip"
+								size="15" placeholder="add Zip client"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientEmail"
+								size="15" placeholder="add Email client"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientScndcntctprsn" size="15" placeholder="Second Contact Person"> <span</td>
+						</tr> 
+						</table> 
+          </li>
+          </div>
+    </div>
+	</form>
+    </div>
+	</div>
+	</div>

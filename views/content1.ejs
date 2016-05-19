@@ -1,0 +1,41 @@
+
+<html ng-app>  
+			<div ng-controller="ClientCtrl">
+	<form ng-submit="addClient()">
+		<div class="col-lg-6">
+		<div class="input-group input-group-lg">
+<small> Case </small>
+						<table style="width:100%">
+<tr>		
+	<td><input class="form-control" type="string" ng-model="clientCasetype"size="15" placeholder="Case Type"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientIncidentloc"size="15" placeholder="Incident Location"> <span</td>
+	<td><input class="form-control" type="date" ng-model="clientDol"
+								size="15" placeholder="Date of Loss"> <span</td>	
+	<td><input class="form-control" type="text" ng-model="clientPdp"
+								size="20" placeholder="Property Damage Photos?"> <span</td>		
+	<td><input class="form-control" type="string" ng-model="clientSource"size="15" placeholder="Source of client"> <span</td>
+  </tr>
+<tr>
+    <td><input class="form-control" type="text" ng-model="clientPr"
+	size="15" placeholder="Is There Police Report?"> <span</td>
+    <td><input class="form-control" type="string" ng-model="clientIncidentfcts"size="15" placeholder="Incident Facts"><span</td>
+    <td><input class="form-control" type="string" ng-model="clientPosncar"
+								size="15" placeholder="Position in Car"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientPdd"
+								size="15" placeholder="Property Damage Description"> <span</td>
+	<td><input class="form-control" type="date" ng-model="clientYmmov"
+								size="15" placeholder="Year/Month/Make of Vehicle"> <span</td>
+<tr>
+	<td><input class="form-control" type="string" ng-model="clientAdvinfo"size="15" placeholder="Adverse Name"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientWtnsnfo"size="15" placeholder="Witness Name"> <span</td>
+	<td><input class="form-control" type="text" ng-model="clientAdvtick"size="15" placeholder="Adverse Ticketed?"> <span</td>
+	<td><input class="form-control" type="text" ng-model="clientClitick"size="15" placeholder="Client Ticketed?"> <span</td>
+	<td><input class="form-control" type="string" ng-model="clientNotes"size="15" placeholder="Notes"> <span</td>
+</tr>
+</table>
+</div>
+    </div>
+	</form>
+    </div>
+	</div>
+	</div>

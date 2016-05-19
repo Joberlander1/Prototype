@@ -1,0 +1,53 @@
+<!DOCTYPE html > 
+<html ng-app>
+<%include header1%>
+<%include navbar%>
+<div class="container">
+<div ng-controller="TodoCtrl">
+<div ng-repeat="todo in todos | filter:{id:0} | orderBy:'id' | limitTo: 1">
+	<header><a href="/consultant" class="btn btn-primary">Back to Consultants</a>  <h1><span style="padding-left:105px">{{todo.name}}</span></h1> <small> <span style="padding-left:380px">Staff: Cristina Flores </small> </header>
+	<h1><span style="padding-left:15px">
+	<a href="/client/1/ci" class="btn btn-primary">Notes/Visit</a>
+	<a href="/client/1/ci" class="btn btn-primary">Cases Brought</a></h1>
+	<body>
+<div class="container">
+	<div ng-controller="TodoCtrl">
+ <div class="datagrid"><table> 
+ <thead> 
+ <tr> 
+     <th> ID </th>
+     <th> Owner </th>
+     <th> Address </th>
+     <th> Zip </th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr ng-repeat="todo in todos | filter:{id:0} | orderBy:'id' | limitTo: 1">
+     <td>
+     {{todo.id}}
+	 </td>
+	 <td><input type="text"  value=" {{todo.owner}}"/> </td>
+	 <td><input type="text"  value="{{todo.address}}"/></td>
+	 <td><input type="text"  value="{{todo.zip}}"/></td>
+	 </tr>
+	 <thead>
+	 <tr> 
+     <th> Phone </th>
+     <th> Payment Pref </th>
+     <th> # of Cases Brought in </th>
+     <th> # of Cases Dropped </th>
+     </tr>
+     </thead>
+     <tr ng-repeat="todo in todos | filter:{id:0} | orderBy:'id' | limitTo: 1">
+     <td><input type="text"  value=" {{todo.phone}}"/> </td>
+	 <td><input type="text"  value="{{todo.paymentpref}}"/></td>
+	 <td><input type="text"  value="{{todo.numofcases}}"/></td>
+	 <td><input type="text"  value="{{todo.numofdropped}}"/></td>
+	 </tr>
+
+	 </tbody>
+	 </table>
+</body>
+	
+	
+     

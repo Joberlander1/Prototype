@@ -1,0 +1,1 @@
+exports.clientpage= function(req, res,next) { next(); };
