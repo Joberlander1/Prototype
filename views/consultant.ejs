@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<html ng-app>
-<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<html ng-app="consultant">
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
 <% include header1 %>
+<% include navbar %> 
 <body>
-	<% include navbar %> 
 
 	<div class="container">
 	<div ng-controller="TodoCtrl">
@@ -14,7 +12,7 @@
 	<h4><form class="form-inline">
       <input ng-model="query" type="text"
         placeholder="Search" autofocus>
-    </form> <span style="padding-left: 650px"><a href="/client/1/ci" class="btn btn-primary">Add New</a></span></h4>
+    </form> <span style="padding-left: 650px"><a href="/consultant" class="btn btn-primary">Add New</a></span></h4>
  <div class="datagrid"><table> 
  <thead> 
  <tr> 

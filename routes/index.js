@@ -44,10 +44,26 @@ exports.login= function(req, res) {
         title : 'WAV'
     });
 };
+exports.cnsltpg1= function(req, res) {
+    res.render('cnsltpg1', {
+        title : 'WAV'
+    });
+};
+exports.cnsltpg2= function(req, res) {
+    res.render('cnsltpg2', {
+        title : 'WAV'
+    });
+};
+exports.docgen= function(req, res) {
+    res.render('docgen', {
+        title : 'WAV'
+    });
+};
 /* clients */
 exports.getclients = function(req, res) {
     models.Client.findAll().then(function(clients){
         res.json(clients);
+        var id = req.params.id
     });
 };
 

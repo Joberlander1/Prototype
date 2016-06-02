@@ -1,4 +1,10 @@
 var myApp = angular.module('app', ['ngRoute']);
+myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider)  {
+        // configure the routing rules here
+        $locationProvider.html5Mode({enabled : true, requireBase : false});
+        $routeProvider.when('/client/:id', {
+            controller: 'viewController'
+        })}]);
 myApp.controller('ClientCtrl', ['$scope', '$http', '$routeParams', function($scope, $http, $routeParams) {
     $scope.clients = [];
     $http.get('/client').success(function(data, status, headers, config) {
@@ -53,6 +59,7 @@ myApp.controller('ClientCtrl', ['$scope', '$http', '$routeParams', function($sco
             wglss : $scope.clientWglss,
             source : $scope.clientSource,
             notes : $scope.clientNotes,
+            photo : $scope.clientPhoto
 
 
         }).success(function(data, status, headers, config) {
@@ -99,6 +106,7 @@ myApp.controller('ClientCtrl', ['$scope', '$http', '$routeParams', function($sco
             wglss : $scope.clientWglss,
             source : $scope.clientSource,
             notes : $scope.clientNotes,
+            photo : $scope.clientPhotos
             });
             $scope.clientName = '';
             $scope.clientAge = '';
@@ -141,23 +149,19 @@ myApp.controller('ClientCtrl', ['$scope', '$http', '$routeParams', function($sco
         }).error(function(data, status, headers, config) {
             console.log("Ops: " + data);
         });
-    };
-    $scope.edit = function(client) {
-    $scope.current = client;
-};
-    $scope.current = {};
+   };
+    $scope.clientId = document.location.href.split('client/')[1];
+    $scope.clientID = document.location.href.split('clientci/')[1];
+    $scope.clientiD = document.location.href.split('clienti/')[1];
+    $scope.clientI_d = document.location.href.split('clientm/')[1];
+    $scope.clienti_D = document.location.href.split('clientf/')[1];
+    $scope.clientI_D = document.location.href.split('docgen/')[1];
+
 }]);
-myApp.config(function ($routeProvider) {
-        // configure the routing rules here
-        $routeProvider.when('/client/:id', {
-            templateUrl: "/clientpage.ejs",
-            controller: 'viewController',
-            controllerAs: "view"
-            }
-            );
-    });
-myApp.controller('viewController', function() {
-  var self = this;
-  self.message = "The app routing is working!";
-});
+myApp.controller('viewController',['$scope','$http', '$location' , '$routeParams',function($scope, $http, $location, $routeParams){
+     $http.get('/client/' + $routeParams.id).success(function(data) {
+        $scope.clients = data;
+        $scope.client=$scope.clients[$routeParams.id]
+        })}]);
+
         

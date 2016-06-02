@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<html ng-app="app">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/3.1.0/css/font-awesome.min.css" />
+<% include headerpdf %>
+<% include navbar %>
+<script type="text/javascript" src="/js/pdf.js"></script>
+<div class="container-fluid flyer-builder">
+		<h1>Document Generator</h1>
+		<div class="row">
+				<div class="col-sm-6 loc_form">
+
+						<div class="form-group">
+								<label for="flyer-image" class="control-label">Image</label>
+								<input id="flyer-image" type="file" tabindex="1">
+						</div>
+
+						<div class="row">
+								<div class="col-sm-7">
+										<div class="form-group">
+												<label for="flyer-title" class="control-label">Title</label>
+												<input required class="form-control" id="flyer-title" placeholder="Main title" value="Benjamin Durham Law" maxlength="255" type="text" tabindex="2">
+										</div>
+								</div>
+								<div class="col-sm-3">
+										<div class="form-group">
+												<label for="flyer-title-size" class="control-label">Size (pt)</label>
+												<input required class="form-control" id="flyer-title-size" value="60" min="1" step="1" type="number" tabindex="3" title="Title size: tune it to fit the available space">
+										</div>
+								</div>
+								
+						</div>
+     
+						<div class="form-group">
+								<label class="control-label" for="flyer-description">Description</label>
+								<textarea class="form-control" id="flyer-description" placeholder="Insert a short description taking care of the available space">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, nihil officia neque ad expedita consequatur quae! Voluptate, incidunt, earum, sit, eveniet harum ratione expedita quibusdam possimus sed laboriosam dolore ut recusandae eos. Ipsa,natus pariatur iste dolorum optio nostrum consectetur!</textarea>
+						</div>
+						<hr>
+						<div class="row">
+								<div class="col-sm-6">
+										<div class="form-group">
+												<button id="flyer_preview_btn" class="btn btn-primary btn-block" tabindex="9">Update preview</button>
+										</div>
+								</div>
+								<div class="col-sm-6">
+										<div class="form-group text-right">
+												<button id="flyer_download_btn" class="btn btn-default btn-xs btn-block" tabindex="10">Download</button>
+										</div>
+								</div>
+						</div>
+
+				</div>
+
+				<div class="col-sm-6">
+						<iframe id="pdf_preview" type="application/pdf" src=""></iframe>
+				</div>
+
+		</div>
+</div>
+<div class="container">
+<div class="datagrid"><table>  
+ <tbody> 
+ <tr> 
+     <td> <button class="btn btn-primary">Client Welcome Letter</button> </td>
+     <td> <button class="btn btn-primary">Demand Letter</button></td>
+     <td> <button class="btn btn-primary">Rep Letter</button> </td>
+     <td> <button class="btn btn-primary">Rep Letter</button> </td>
+     </tr>
+     </tbody>

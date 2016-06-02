@@ -4,13 +4,13 @@
 <%include navbar%>
 <div class="container">
 <div ng-controller="ClientCtrl">
-<div ng-repeat="client in clients | filter:{id:id} ">
-	<header><a href="/about" class="btn btn-primary">Back to clients</a>  <h2>{{client.name}}</h2> <small> <span style="padding-left:463px">Staff: Victoria Flores </small> </header>
-	<h1><span style="padding-left:300px"><a href="/client/{{client.id}}" class="btn btn-primary">Personal</a>
-	<a href="/client/{{client.id}}/ci" class="btn btn-primary">Case Info</a>
-	<a href="/client/{{client.id}}/i" class="btn btn-primary">Insurance</a>
-	<a href="/client/{{client.id}}/m" class="btn btn-primary">Medical</a>
-	<a href="/client/{{client.id}}/f" class="btn btn-primary">Financial</a></h1>
+<div ng-repeat="client in clients | orderBy:'id' | filter:{id:clientId} | limitTo: 1">
+ <h2>{{client.name}}</h2></div> <small> <span style="padding-left:463px">Staff: Victoria Flores </small> </header>
+	<h1><span style="padding-left:300px"><a ng-href="/client/{{clientId}}" class="btn btn-primary">Personal</a>
+	<a ng-href="/clientci/{{clientId}}" class="btn btn-primary">Case Info</a>
+	<a ng-href="/clienti/{{clientId}}" class="btn btn-primary">Insurance</a>
+	<a ng-href="/clientm/{{clientId}}" class="btn btn-primary">Medical</a>
+	<a ng-href="/clientf/{{client.id}}" class="btn btn-primary">Financial</a></h1>
 	<body>
 <div class="container">
 	<div ng-controller="ClientCtrl">
@@ -24,11 +24,11 @@
      </tr>
      </thead>
      <tbody>
-     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:id} | limitTo: 1">
+     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:clientId} | limitTo: 1">
      <td>
      {{client.id}}
 	 </td>
-	 <td> <input type="text" ng-model="client.phone" value="{{client.phone}}"/> </td>
+	 <td><input type="text" value="{{client.phone}}"/></td>
 	 <td><input type="text" value="{{client.address}}"/></td>
 	 <td><input type="text" value="{{client.zip}}"/></td>
 	 </tr>
@@ -40,7 +40,7 @@
      <th> DLN </th>
      </thead>
      </tr>
-     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:clientId} | limitTo: 1">
      <td> <input type="text" value="{{client.ssn}}"/> </td>
 	 <td><input type="text" value="{{client.age}}"/</td>
 	 <td><input type="text" value="{{client.birthday}}"/></td>
@@ -50,6 +50,7 @@
 	 </tbody>
 	 </table>
 </body>
+
 	
 	
      

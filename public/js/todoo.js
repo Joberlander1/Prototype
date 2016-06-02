@@ -1,4 +1,4 @@
-var mapp = angular.module('app');
+var mapp = angular.module('consultant',[]);
 mapp.controller('TodoCtrl', ['$scope', '$http', function($scope, $http) {
     $scope.todos = [];
     $http.get('/todo').success(function(data, status, headers, config) {
@@ -41,4 +41,7 @@ mapp.controller('TodoCtrl', ['$scope', '$http', function($scope, $http) {
                 $scope.todos.push(todo);
         });
     };
+    $scope.todoId = document.location.href.split('todo/')[1];
+    $scope.todoID = document.location.href.split('todonotes/')[1];
+    $scope.todoiD = document.location.href.split('todocases/')[1];
 }]);

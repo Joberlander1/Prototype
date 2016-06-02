@@ -167,6 +167,8 @@ module.exports = function(sequelize, DataTypes) {
         notes : {
           type : DataTypes.STRING,
       },
+        photo : { 
+          type : DataTypes.INTEGER}
     });
 
     return Client;

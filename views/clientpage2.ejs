@@ -4,13 +4,13 @@
 <%include navbar%>
 <div class="container">
 <div ng-controller="ClientCtrl">
-<div ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
-	<header><a href="/about" class="btn btn-primary">Back to clients</a>  <h2>{{client.name}}</h2> <small> <span style="padding-left:463px">Staff: Victoria Flores </small> </header>
+<div ng-repeat="client in clients | orderBy:'id'| filter:{id:clientiD} | limitTo: 1">
+	<header> <h2>{{client.name}}</h2> <small> <span style="padding-left:463px">Staff: Victoria Flores </small> </header>
 	<h1><span style="padding-left:300px"><a href="/client/{{client.id}}" class="btn btn-primary">Personal</a>
-	<a href="/client/{{client.id}}/ci" class="btn btn-primary">Case Info</a>
-	<a href="/client/{{client.id}}/i" class="btn btn-primary">Insurance</a>
-	<a href="/client/{{client.id}}/m" class="btn btn-primary">Medical</a>
-	<a href="/client/{{client.id}}/f" class="btn btn-primary">Financial</a></h1>
+     <a href="/clientci/{{client.id}}" class="btn btn-primary">Case Info</a>
+     <a href="/clienti/{{client.id}}" class="btn btn-primary">Insurance</a>
+     <a href="/clientm/{{client.id}}" class="btn btn-primary">Medical</a>
+     <a href="/clientf/{{client.id}}" class="btn btn-primary">Financial</a></h1>
 	<body>
 <div class="container">
 	<div ng-controller="ClientCtrl">
@@ -24,7 +24,7 @@
      </tr>
      </thead>
      <tbody>
-     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:clientiD} | limitTo: 1">
      <td><input type="text" value="
      {{client.cai}}"/></td>
 	 <td><input type="text"  value="{{client.policy}}"/> </td>
@@ -39,7 +39,7 @@
      <th> Checks </th>
      </tr>
      </thead>
-     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:clientiD} | limitTo: 1">
      <td><input type="text"  value="{{client.adjstrphne}}"/> </td>
 	 <td><input type="text"  value="{{client.adjstrfx}}"/></td>
 	 <td><input type="text"  value="{{client.inslim}}"/></td>
@@ -53,7 +53,7 @@
      <th> Adverse Adjuster Name</th>
      </tr>
      </thead>
-     <tr ng-repeat="client in clients | filter:{id:id} | orderBy:'id' | limitTo: 1">
+     <tr ng-repeat="client in clients | orderBy:'id' | filter:{id:clientiD} | limitTo: 1">
      <td><input type="text"  value="{{client.advins}}"/> </td>
      <td><input type="text"  value="{{client.advinspol}}"/> </td>
      <td><input type="text"  value="{{client.claim}}"/> </td>

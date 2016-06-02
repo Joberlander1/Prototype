@@ -13,7 +13,7 @@ var app = express();
 var database = require('./models');
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 80);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.favicon());
@@ -32,15 +32,19 @@ app.get('/', routes.login);
 app.get('/client', routes.getclients);
 app.post('/client', routes.saveclients);
 app.get('/todo', routes.gettodos);
-app.get('/client/:id',function(req, res) {
-console.log(req.params.id);
-res.render('clientpage', { title : 'WAV' });
+app.param('id', function (req, res, next, id) {
+  console.log(req.params.id);
+  next();
 });
+app.get('/client/:id', routes.clientpage);
+app.get('/docgen/:id', routes.docgen);
 app.get('/todo/:id', routes.consultantpage);
-app.get('/client/:id/ci', routes.clientpage1);
-app.get('/client/:id/i', routes.clientpage2);
-app.get('/client/:id/m', routes.clientpage3);
-app.get('/client/:id/f', routes.clientpage4);
+app.get('/todonotes/:id', routes.cnsltpg1);
+app.get('/todocases/:id', routes.cnsltpg2);
+app.get('/clientci/:id', routes.clientpage1);
+app.get('/clienti/:id', routes.clientpage2);
+app.get('/clientm/:id', routes.clientpage3);
+app.get('/clientf/:id', routes.clientpage4);
 app.get('/users', user.list);
 app.get('/intake', routes.index);
 
@@ -52,6 +56,8 @@ app.get('/consultant', consultant.consultant);
 
 var clientpage = require('./routes/clientpage');
 app.get('/clientpage', clientpage.clientpage);
+var clientpage1 = require('./routes/clientpage1');
+app.get('/clientpage1', clientpage1.clientpage1);
 
 var login = require('./routes/login');
 app.get('/login', login.login);

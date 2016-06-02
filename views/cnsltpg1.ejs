@@ -1,0 +1,38 @@
+<!DOCTYPE html > 
+<html ng-app = "consultant">
+<%include header1%>
+<%include navbar%>
+<div class="container">
+<div ng-controller="TodoCtrl">
+<div ng-repeat="todo in todos | orderBy:'id'| filter:{id:todoID} | limitTo: 1">
+	<header> <h1><span style="padding-left:105px">{{todo.name}}</span></h1> <small> <span style="padding-left:380px">Staff: Cristina Flores </small> </header>
+	<h1><span style="padding-left:15px">
+	<span style="padding-left:300px">
+	<a href="/todocases/{{todoID}}" class="btn btn-primary">Cases Brought</a></h1>
+	<body>
+<div class="container">
+	<div ng-controller="TodoCtrl">
+ <div class="datagrid"><table> 
+ <thead> 
+ <tr> 
+     <th> ID </th>
+     <th> Contacted </th>
+     <th> Date </th>
+     <th> Note </th>
+     </tr>
+     </thead>
+     <tbody>
+     <tr ng-repeat="todo in todos | orderBy:'id' | filter:{id:todoID} | limitTo: 1">
+     <td>
+     {{todo.id}}
+	 </td>
+	 <td><input type="text"  value=" {{todo.owner}}"/> </td>
+	 <td><input type="text"  value="{{todo.address}}"/></td>
+	 <td><input type="text"  value="{{todo.note}}"/></td>
+	 </tr>
+	 </tbody>
+	 </table>
+</body>
+	
+	
+     
